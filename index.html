@@ -1,0 +1,43 @@
+<html>
+<body>
+<h1>JS QueryString Test</h1>
+
+<a href="?color=blue&price=5.99">Blue</a>
+<a href="?color=red&price=6.99">Red</a>
+<a href="?color=yellow&price=7.99">Yellow</a>
+<a href="?">Clear</a>    
+
+<p>The current color is <span id="color">none</span></p>
+<p>The current price is <span id="price">none</span></p>    
+
+
+</body>
+<script>
+
+//use location object to access querystring (address bar)
+const queryString = window.location.search;
+    
+//output to console    
+console.log(queryString);
+    
+//separate querystring parameters
+const urlParams = new URLSearchParams(queryString);
+    
+    
+//check for the existence of a parameter:
+if(urlParams.has('color')){
+    
+    //retrieve value of parameter
+    var myColor = urlParams.get('color');
+    
+    //show data on page
+    document.getElementById('color').innerHTML = myColor;
+}
+    
+if(urlParams.has('price')){
+    var myPrice = urlParams.get('price');
+    document.getElementById('price').innerHTML = myPrice;
+}    
+ 
+</script>
+</html>
