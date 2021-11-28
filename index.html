@@ -7,8 +7,8 @@
 <a href="?color=yellow&price=7.99">Yellow</a>
 <a href="?">Clear</a>    
 
-<p>The current color is <span id="color">none</span></p>
-<p>The current price is <span id="price">none</span></p>    
+    <p>The current color is <span id="color"><b>none</b></span></p>
+    <p>The current price is <span id="price"><b>none</b></span></p>    
 
 
 </body>
@@ -32,6 +32,7 @@ if(urlParams.has('color')){
     
     //show data on page
     document.getElementById('color').innerHTML = myColor;
+    document.getElementById('color').style.backgroundColor = myColor;
 }
     
 if(urlParams.has('price')){
